@@ -136,8 +136,4 @@ flowchart LR
 
 ---
 
-**Documento de referencia compilado a partir de:**
-- introduccion_analisis_funcional.md
-- alcance_analisis_funcional.md
-- requisitos funcionales.md
-- Diagrama de casos de uso Identipat.md
+
