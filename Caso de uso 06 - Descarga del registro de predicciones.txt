@@ -1,0 +1,53 @@
+Caso de uso 06 — Descarga del registro de predicciones
+
+Descripción:
+Permite al usuario administrador consultar y descargar en formato Excel el registro de predicciones realizadas en el sistema Identipat, aplicando un rango de fechas definido mediante una fecha de inicio y una fecha de fin.
+
+Tipo de usuario: administrador
+
+Precondición:
+El usuario administrador ha iniciado sesión y existen predicciones registradas en el sistema.
+
+Postcondición:
+El administrador dispone del registro de predicciones correspondiente al rango seleccionado, descargado en formato Excel (.xlsx).
+
+Flujo principal:
+
+1. El administrador accede a la opción “Registro de predicciones” en el panel de administración.
+2. El sistema muestra el registro de predicciones disponibles.
+3. El administrador indica la fecha de inicio y la fecha de fin del periodo que desea consultar.
+4. El sistema valida que la fecha de inicio sea anterior o igual a la fecha de fin.
+5. El sistema filtra el registro de predicciones según el rango de fechas seleccionado.
+6. El administrador selecciona la opción “Descargar”.
+7. El sistema genera el registro en formato Excel (.xlsx), incluyendo las predicciones correspondientes al periodo seleccionado.
+8. El sistema descarga el archivo en el dispositivo del administrador.
+9. Finaliza el flujo principal.
+
+Flujo alternativo — Registro no disponible:
+
+1. En el paso 5, el sistema verifica que no existen predicciones registradas dentro del rango seleccionado.
+2. El sistema muestra un mensaje indicando que no hay información disponible para descargar.
+3. Finaliza el flujo alternativo.
+
+Flujo alternativo — Rango de fechas inválido:
+
+1. En el paso 4, el sistema determina que la fecha de inicio es posterior a la fecha de fin.
+2. El sistema muestra un mensaje indicando que el rango de fechas seleccionado no es válido.
+3. El administrador corrige las fechas ingresadas.
+4. El flujo continúa en el paso 4 del flujo principal.
+
+Flujo alternativo — Error al generar el archivo:
+
+1. En el paso 7, el sistema no puede generar el archivo Excel.
+2. El sistema muestra un mensaje de error.
+3. El administrador puede intentar nuevamente la descarga.
+4. Finaliza el flujo alternativo.
+
+Requisito funcional asociado:
+Funcionalidad administrativa de consulta y descarga del registro de utilización de la plataforma.
+
+Nota funcional:
+Este caso de uso es independiente del RF-07. El RF-07 corresponde al reporte PDF de diagnóstico que recibe el usuario sobre su proyecto, mientras que este caso comprende el registro administrativo de las predicciones realizadas en la plataforma y su descarga en formato Excel.
+
+Diseño preliminar de interfaz:
+Figura.

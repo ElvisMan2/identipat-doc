@@ -1,0 +1,43 @@
+Caso de uso 07 — Actualización de la información personal de los usuarios
+
+Descripción:
+Permite al usuario administrador actualizar la información personal de los usuarios registrados en el sistema Identipat.
+
+Tipo de usuario: administrador
+
+Precondición:
+El usuario administrador ha iniciado sesión y el usuario que se actualizará se encuentra registrado.
+
+Postcondición:
+La información personal del usuario se encuentra actualizada en el sistema.
+
+Flujo principal:
+
+1. El administrador accede a la opción “Usuarios” en el panel de administración.
+2. El sistema muestra el formulario de búsqueda de usuarios.
+3. El administrador ingresa el DNI o Carné de Extranjería del usuario.
+4. El sistema muestra la información registrada del usuario.
+5. El administrador actualiza los datos personales requeridos y selecciona el botón “Guardar”.
+6. El sistema valida y almacena la información actualizada.
+7. El sistema muestra un mensaje de confirmación.
+8. Finaliza el flujo principal.
+
+Flujo alternativo — Usuario no encontrado:
+
+1. En el paso 4, el sistema verifica que no existe un usuario asociado al documento ingresado.
+2. El sistema muestra un mensaje indicando que el usuario no está registrado.
+3. El administrador puede realizar una nueva búsqueda.
+4. Finaliza el flujo alternativo.
+
+Flujo alternativo — Información inválida o incompleta:
+
+1. En el paso 6, el sistema verifica que la información ingresada es inválida o está incompleta.
+2. El sistema muestra un mensaje indicando los datos que deben corregirse.
+3. El administrador corrige la información y selecciona nuevamente el botón “Guardar”.
+4. El sistema continúa con el paso 6 del flujo principal.
+
+Requisito funcional asociado:
+No especificado en los requisitos funcionales proporcionados.
+
+Diseño preliminar de interfaz:
+Figura.

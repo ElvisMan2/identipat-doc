@@ -1,0 +1,43 @@
+Caso de uso 03 — Registro de información personal
+
+Descripción:
+Permite al usuario registrar sus datos personales en el sistema Identipat cuando accede por primera vez.
+
+Tipo de usuario: visitante
+
+Precondición:
+El sistema ha verificado que el usuario no se encuentra registrado.
+
+Postcondición:
+La información personal del usuario se encuentra registrada en el sistema y el usuario puede acceder al formulario de predicción.
+
+Flujo principal:
+
+1. El sistema muestra el formulario de registro de información personal.
+2. El usuario ingresa su DNI o Carné de Extranjería, nombres, apellidos, correo electrónico y perfil.
+3. El usuario acepta el consentimiento para el tratamiento de sus datos personales y selecciona el botón “Guardar”.
+4. El sistema valida la información ingresada y verifica que el usuario no se encuentre registrado.
+5. El sistema almacena la información personal del usuario.
+6. El sistema redirige al usuario al formulario de predicción.
+7. Finaliza el flujo principal.
+
+Flujo alternativo — Información incompleta o consentimiento no otorgado:
+
+1. En el paso 4, el sistema verifica que faltan datos obligatorios o que el consentimiento no fue otorgado.
+2. El sistema muestra un mensaje indicando que debe completar la información requerida y aceptar el consentimiento.
+3. El sistema mantiene al usuario en el formulario de registro de información personal.
+4. El usuario completa la información requerida y selecciona nuevamente el botón “Guardar”.
+5. El sistema continúa con el paso 4 del flujo principal.
+
+Flujo alternativo — Usuario ya registrado:
+
+1. En el paso 4, el sistema verifica que el DNI o Carné de Extranjería ya se encuentra registrado.
+2. El sistema muestra un mensaje indicando que el usuario ya está registrado.
+3. El sistema solicita al usuario iniciar sesión.
+4. Finaliza el flujo alternativo.
+
+Requisito funcional asociado:
+RF-02: Registro de información del usuario
+
+Diseño preliminar de interfaz:
+Figura.

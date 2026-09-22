@@ -1,0 +1,34 @@
+Caso de uso 02 — Inicio de sesión
+
+Descripción:
+Permite al usuario administrador acceder al panel de administración de Identipat mediante la validación de sus credenciales.
+
+Tipo de usuario: administrador
+
+Precondición:
+El usuario administrador se encuentra registrado y el portal Identipat está disponible.
+
+Postcondición:
+El administrador ha iniciado sesión y puede acceder a las funciones administrativas autorizadas.
+
+Flujo principal:
+
+1. El administrador accede al portal Identipat.
+2. El sistema muestra el formulario de inicio de sesión.
+3. El administrador ingresa su DNI o Carné de Extranjería y su contraseña, y selecciona el botón “Ingresar”.
+4. El sistema valida las credenciales ingresadas.
+5. El sistema habilita y muestra el panel de administración.
+6. Finaliza el flujo principal.
+
+Flujo alternativo — Credenciales no válidas:
+
+1. En el paso 4 del flujo principal, el sistema verifica que las credenciales no son válidas.
+2. El sistema muestra un mensaje de error.
+3. El sistema mantiene al administrador en el formulario de inicio de sesión.
+4. Finaliza el flujo alternativo.
+
+Requisito funcional asociado:
+RF-01: Acceso a la plataforma
+
+Diseño preliminar de interfaz:
+Figura.

@@ -1,0 +1,50 @@
+Caso de uso 04 — Predicción de la modalidad de protección
+
+Descripción:
+Permite al usuario ingresar la descripción de su creación y obtener una predicción sobre la modalidad de protección de propiedad intelectual más probable.
+
+Tipo de usuario: visitante
+
+Precondición:
+El usuario se encuentra registrado y ha accedido al formulario de predicción.
+
+Postcondición:
+El usuario obtiene una predicción y un reporte de diagnóstico sobre la modalidad de protección de su creación. El consentimiento queda sujeto a la decisión del usuario de mantenerlo o revocarlo.
+
+Flujo principal:
+
+1. El sistema muestra el formulario para ingresar la descripción de la creación.
+2. El usuario ingresa la descripción mediante texto, voz o un documento PDF.
+3. El sistema valida que la descripción cumpla con la longitud mínima requerida.
+4. El sistema muestra el consentimiento específico para el tratamiento de la información personal asociada a la predicción.
+5. El usuario acepta el consentimiento y confirma que desea realizar la predicción.
+6. El sistema procesa la descripción mediante técnicas de procesamiento de lenguaje natural e inteligencia artificial.
+7. El sistema identifica la materia susceptible de protección y muestra la modalidad de protección más probable.
+8. El sistema muestra el reporte de diagnóstico y las orientaciones correspondientes.
+9. Durante la predicción, el sistema mantiene disponible la opción para que el usuario revoque el consentimiento.
+10. Finaliza el flujo principal.
+
+Flujo alternativo — Consentimiento no otorgado o revocado:
+
+1. En el paso 5 o durante la predicción, el usuario no acepta el consentimiento o decide revocarlo.
+2. El sistema cancela o detiene el procesamiento de la información personal.
+3. El sistema informa al usuario que no puede generar la predicción sin el consentimiento correspondiente.
+4. Finaliza el flujo alternativo.
+
+Flujo alternativo — Descripción inválida:
+
+1. En el paso 3, el sistema verifica que la descripción no cumple con la longitud mínima requerida o no puede ser procesada.
+2. El sistema muestra un mensaje indicando el problema.
+3. El usuario corrige o vuelve a ingresar la descripción.
+4. El sistema continúa con el paso 3 del flujo principal.
+
+Requisito funcional asociado:
+RF-03: Ingreso de descripción del activo
+RF-04: Procesamiento de lenguaje natural
+RF-05: Identificación de materia patentable
+RF-06: Clasificación de materia protegible
+RF-07: Emisión de reportes de diagnóstico
+RF-08: Orientación complementaria y ruta de registro
+
+Diseño preliminar de interfaz:
+Figura.

@@ -1,0 +1,9 @@
+Casos de uso del sistema Identipat IA
+
+01. Acceso al sistema
+02. Inicio de sesión
+03. Registro de información personal
+04. Predicción de la modalidad de protección
+05. Cambio de contraseña del usuario administrador
+06. Descarga del registro de predicciones
+07. Actualización de la información personal de los usuarios

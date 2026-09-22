@@ -1,0 +1,42 @@
+Caso de uso 05 — Cambio de contraseña del usuario administrador
+
+Descripción:
+Permite al usuario administrador actualizar su contraseña de acceso al sistema Identipat.
+
+Tipo de usuario: administrador
+
+Precondición:
+El usuario administrador ha iniciado sesión y se encuentra en el panel de administración.
+
+Postcondición:
+La contraseña del usuario administrador ha sido actualizada y puede utilizarse para futuros inicios de sesión.
+
+Flujo principal:
+
+1. El administrador selecciona la opción “Cambiar contraseña”.
+2. El sistema muestra el formulario de cambio de contraseña.
+3. El administrador ingresa su contraseña actual, la nueva contraseña y su confirmación.
+4. El sistema valida la contraseña actual y verifica que la nueva contraseña coincida con su confirmación.
+5. El sistema actualiza la contraseña del administrador.
+6. El sistema muestra un mensaje de confirmación.
+7. Finaliza el flujo principal.
+
+Flujo alternativo — Contraseña actual incorrecta:
+
+1. En el paso 4 del flujo principal, el sistema verifica que la contraseña actual no es válida.
+2. El sistema muestra un mensaje de error y mantiene al administrador en el formulario.
+3. El administrador ingresa nuevamente sus credenciales.
+4. El sistema continúa con el paso 4 del flujo principal.
+
+Flujo alternativo — Nueva contraseña no válida:
+
+1. En el paso 4 del flujo principal, el sistema verifica que la nueva contraseña no coincide con su confirmación.
+2. El sistema muestra un mensaje indicando que los datos no coinciden.
+3. El administrador corrige la información ingresada.
+4. El sistema continúa con el paso 4 del flujo principal.
+
+Requisito funcional asociado:
+No especificado en los requisitos funcionales proporcionados.
+
+Diseño preliminar de interfaz:
+Figura.

@@ -1,0 +1,40 @@
+Caso de uso 01 — Acceso al sistema
+
+Descripción:
+Permite al usuario ingresar a la plataforma Identipat mediante la validación de su documento de identidad.
+
+Tipo de usuario: visitante
+
+Precondición:
+El portal Identipat se encuentra disponible.
+El actor accede a la URL del portal
+
+Postcondición:
+El usuario ha accedido al sistema y se encuentra en el formulario de predicción, listo para ingresar la información requerida.
+
+
+Flujo principal:
+
+1. El usuario accede al portal institucional de Identipat.
+2. El sistema muestra :
+ - Información general de la herramienta
+ - Pautas de uso y las políticas de privacidad.
+ - formulario con campo DOI (DNI o carne de extranjeria)
+3. El usuario ingresa su DNI o Carné de Extranjería y selecciona el botón “Ingresar”.
+4. El sistema verifica que el documento de identidad se encuentre registrado.
+5. El sistema habilita y muestra el formulario de predicción.
+6. Finaliza el flujo principal.
+
+
+Flujo alternativo — Usuario no registrado:
+
+1. En el paso 4 del flujo principal, el sistema verifica que el documento de identidad no se encuentra registrado.
+2. El sistema muestra un mensaje indicando que el usuario no está registrado.
+3. El sistema redirige al usuario al formulario de registro de datos personales.
+4. Finaliza el flujo alternativo.
+
+Requisito funcional asociado:
+RF-01: Acceso a la plataforma
+
+Diseño preliminar de interfaz:
+Figura.

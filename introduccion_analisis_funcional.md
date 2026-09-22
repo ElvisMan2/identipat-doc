@@ -1,0 +1,7 @@
+# Introducción al análisis funcional
+
+El presente documento de análisis funcional describe las necesidades, objetivos y comportamiento esperado del sistema Identipat IA, una herramienta basada en inteligencia artificial y procesamiento de lenguaje natural para apoyar la identificación de activos de propiedad intelectual en el Perú. Su propósito es establecer una visión clara y ordenada de la solución, considerando las funcionalidades que estarán disponibles para los usuarios visitantes y para el administrador del sistema.
+
+El análisis funcional traduce las necesidades del negocio en requisitos comprensibles, verificables y orientados al desarrollo de la plataforma. Para ello, se detallan los procesos relacionados con el acceso al sistema, el registro y actualización de información personal, la predicción de la modalidad de protección, la gestión administrativa y la descarga de los resultados generados por la herramienta.
+
+Asimismo, este documento sirve como referencia común para los participantes del proyecto, incluyendo las áreas usuarias, los responsables del análisis, el equipo de desarrollo y los encargados de validación. La definición de los casos de uso, actores, flujos principales y situaciones alternativas permitirá confirmar que la solución responda a los objetivos planteados, mantenga una experiencia coherente para sus usuarios y cumpla con las condiciones funcionales y legales aplicables.
