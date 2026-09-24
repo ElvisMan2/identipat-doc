@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Identipat IA | Home</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Manrope:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream: #fdf8ef;
+      --sand: #f2e8d5;
+      --ink: #1f2933;
+      --teal: #0d6672;
+      --teal-strong: #0a4f58;
+      --accent: #d97b2e;
+      --white: #ffffff;
+      --shadow: 0 16px 34px rgba(31, 41, 51, 0.12);
+      --radius: 18px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Manrope", sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at 8% 18%, rgba(13, 102, 114, 0.12), transparent 38%),
+        radial-gradient(circle at 90% 28%, rgba(217, 123, 46, 0.2), transparent 35%),
+        linear-gradient(170deg, var(--cream), #fffaf2);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .top-banner {
+      width: 100%;
+      background: linear-gradient(90deg, var(--teal-strong), var(--teal));
+      color: var(--white);
+      font-weight: 700;
+      letter-spacing: 0.2px;
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      padding: 0;
+    }
+
+    .top-banner > div {
+      width: 100%;
+      text-align: center;
+      padding: 10px 16px;
+      background: #ffffff;
+      color: rgba(31, 41, 51, 0.8);
+    }
+
+    .top-banner figure {
+      width: 100%;
+      margin: 0;
+      line-height: 0;
+    }
+
+    .top-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .layout {
+      width: min(1100px, 92vw);
+      margin: 38px auto 48px;
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      grid-template-areas:
+        "intro figure"
+        "access figure";
+      gap: 34px;
+      align-items: stretch;
+      flex: 1;
+      animation: rise 650ms ease-out both;
+    }
+
+    .intro {
+      grid-area: intro;
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid rgba(13, 102, 114, 0.14);
+      border-radius: var(--radius);
+      padding: 30px;
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(4px);
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-family: "DM Serif Display", serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1;
+      color: #15314f;
+    }
+
+    .intro p {
+      margin: 0;
+      line-height: 1.7;
+      font-size: clamp(1rem, 1.5vw, 1.08rem);
+    }
+
+    .figure-box {
+      grid-area: figure;
+      background: linear-gradient(145deg, #fff, #f9f1df);
+      border-radius: var(--radius);
+      border: 1px solid rgba(13, 102, 114, 0.18);
+      box-shadow: var(--shadow);
+      padding: 22px;
+      height: 100%;
+      display: flex;
+    }
+
+    .figure-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+
+    .access-card {
+      grid-area: access;
+      width: min(660px, 100%);
+      justify-self: center;
+      background: var(--white);
+      border: 1px solid rgba(31, 41, 51, 0.1);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 18px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+      align-items: stretch;
+    }
+
+    .access-card label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: #143f48;
+      font-size: 0.95rem;
+    }
+
+    .access-fields {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 10px;
+    }
+
+    .access-card select,
+    .access-card input {
+      border: 2px solid #c9d6dc;
+      border-radius: 12px;
+      padding: 10px 12px;
+      font-size: 0.96rem;
+      transition: border-color 200ms ease, box-shadow 200ms ease;
+    }
+
+    .access-card select {
+      background: #ffffff;
+    }
+
+    .access-card select:focus,
+    .access-card input:focus {
+      outline: none;
+      border-color: var(--teal);
+      box-shadow: 0 0 0 4px rgba(13, 102, 114, 0.15);
+    }
+
+    .access-card button {
+      border: none;
+      border-radius: 12px;
+      background: #1a96a0;
+      color: var(--white);
+      padding: 10px 16px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 200ms ease, background-color 200ms ease;
+    }
+
+    .access-card button:hover {
+      transform: translateY(-1px);
+      background: #167f88;
+    }
+
+    .access-actions {
+      display: grid;
+      gap: 8px;
+      width: 100%;
+    }
+
+    .helper-row {
+      margin-top: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .helper-row small {
+      color: rgba(31, 41, 51, 0.85);
+    }
+
+    .register-link {
+      color: #1a96a0;
+      font-weight: 700;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .register-link:hover {
+      text-decoration: underline;
+      color: #167f88;
+    }
+
+    .form-error {
+      margin-top: 8px;
+      color: #b42318;
+      font-size: 0.9rem;
+      font-weight: 600;
+      display: none;
+    }
+
+    .admin-password-group {
+      margin-top: 10px;
+      display: none;
+    }
+
+    footer {
+      width: 100%;
+      margin-top: auto;
+      line-height: 0;
+    }
+
+    footer img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(14px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+          "intro"
+          "figure"
+          "access";
+        gap: 22px;
+      }
+
+      .access-card {
+        grid-template-columns: 1fr;
+      }
+
+      .figure-box {
+        height: auto;
+      }
+
+      .figure-box img {
+        height: auto;
+      }
+
+      .access-fields {
+        grid-template-columns: 1fr;
+      }
+
+      .access-card button {
+        width: 100%;
+      }
+    }
+
+    .admin-panel {
+      width: min(1100px, 92vw);
+      margin: 38px auto 48px;
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(13, 102, 114, 0.18);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 24px;
+      display: none;
+      animation: rise 650ms ease-out both;
+    }
+
+    .admin-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+    }
+
+    .admin-header h2 {
+      margin: 0;
+      font-family: "DM Serif Display", serif;
+      color: #15314f;
+      font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+    }
+
+    .admin-header button {
+      border: none;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-strong));
+      color: var(--white);
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .admin-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+
+    .admin-card {
+      border: 1px solid rgba(31, 41, 51, 0.12);
+      border-radius: 14px;
+      padding: 16px;
+      background: #fff;
+    }
+
+    .admin-card h3 {
+      margin: 0 0 10px;
+      color: #143f48;
+      font-size: 1.05rem;
+    }
+
+    .card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .card-head h3 {
+      margin: 0;
+    }
+
+    .btn-export {
+      border: none;
+      border-radius: 9px;
+      background: #1a96a0;
+      color: #fff;
+      padding: 8px 11px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .btn-export:hover {
+      background: #167f88;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 620px;
+    }
+
+    th,
+    td {
+      border-bottom: 1px solid #e5eaee;
+      padding: 10px;
+      text-align: left;
+      font-size: 0.94rem;
+    }
+
+    th {
+      color: #0a4f58;
+      background: #f6fafb;
+      font-weight: 700;
+    }
+
+    .status-pill {
+      display: inline-block;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #0a4f58;
+      background: #d7f0f3;
+    }
+
+    .btn-edit {
+      border: none;
+      border-radius: 8px;
+      background: #1a96a0;
+      color: #fff;
+      padding: 7px 10px;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    .btn-edit:hover {
+      background: #167f88;
+    }
+
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      z-index: 20;
+    }
+
+    .modal {
+      width: min(520px, 100%);
+      background: #fff;
+      border-radius: 14px;
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.26);
+      border: 1px solid rgba(13, 102, 114, 0.22);
+      padding: 18px;
+    }
+
+    .modal h3 {
+      margin: 0 0 12px;
+      color: #15314f;
+      font-family: "DM Serif Display", serif;
+      font-size: 1.45rem;
+    }
+
+    .modal-grid {
+      display: grid;
+      gap: 10px;
+    }
+
+    .modal-grid label {
+      display: block;
+      font-weight: 700;
+      margin-bottom: 4px;
+      color: #143f48;
+      font-size: 0.9rem;
+    }
+
+    .modal-grid input,
+    .modal-grid select {
+      width: 100%;
+      border: 2px solid #c9d6dc;
+      border-radius: 10px;
+      padding: 10px;
+      font-size: 0.95rem;
+    }
+
+    .modal-actions {
+      margin-top: 14px;
+      display: flex;
+      justify-content: flex-end;
+      gap: 8px;
+    }
+
+    .modal-actions button {
+      border: none;
+      border-radius: 10px;
+      padding: 9px 12px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    #btn-cancelar-edicion {
+      background: #e6eaed;
+      color: #1f2933;
+    }
+
+    #btn-guardar-edicion {
+      background: #1a96a0;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <header class="top-banner">
+    <div>Identipat IA · Identifica la modalidad de protección para tu creación en minutos.</div>
+    <figure>
+      <img src="img/banner superior.png" alt="Identipat IA" />
+    </figure>
+  </header>
+
+  <main class="layout" role="main">
+    <section class="intro" aria-labelledby="titulo-home">
+      <h1 id="titulo-home">Protege tus ideas con claridad y orientación inteligente</h1>
+      <p>
+        Identipat IA te ayuda a reconocer el tipo de protección de propiedad intelectual más adecuado para tu creación.
+        Describe tu propuesta, evalúa su potencial de registro y accede a recomendaciones prácticas para dar el siguiente paso.
+      </p>
+    </section>
+
+    <figure class="figure-box" aria-label="Ilustración de análisis de innovación">
+      <img src="img/identipat.gif" alt="Ilustración Identipat" />
+    </figure>
+
+    <section class="access-card" aria-label="Ingreso de documento de identidad">
+      <div>
+        <label for="identificador">Tipo de documento y número</label>
+        <div class="access-fields">
+          <select id="tipo-documento" name="tipo-documento" aria-label="Tipo de documento">
+            <option value="dni">DNI</option>
+            <option value="ce">CE</option>
+          </select>
+          <input
+            id="identificador"
+            name="identificador"
+            type="text"
+            inputmode="numeric"
+            pattern="[0-9]{8}"
+            maxlength="8"
+            placeholder="Ingresa 8 dígitos"
+            aria-describedby="ayuda-identificador"
+          />
+        </div>
+        <div class="helper-row">
+          <small id="ayuda-identificador">Usa tu documento para continuar con la evaluación de tu creación.</small>
+          <a class="register-link" href="#">Registrarse</a>
+        </div>
+        <div id="admin-password-group" class="admin-password-group">
+          <label for="admin-password">Contraseña de administrador</label>
+          <input
+            id="admin-password"
+            name="admin-password"
+            type="password"
+            placeholder="Ingresa tu contraseña"
+            autocomplete="current-password"
+          />
+        </div>
+        <p id="mensaje-error" class="form-error" role="alert"></p>
+      </div>
+      <div class="access-actions">
+        <button id="btn-continuar" type="button">Continuar</button>
+      </div>
+    </section>
+  </main>
+
+  <section id="admin-panel" class="admin-panel" aria-label="Panel de administración">
+    <div class="admin-header">
+      <h2>Panel de administración</h2>
+      <button id="btn-volver" type="button">Volver al inicio</button>
+    </div>
+
+    <div class="admin-grid">
+      <article class="admin-card" aria-label="Usuarios registrados">
+        <div class="card-head">
+          <h3>Usuarios registrados</h3>
+          <button id="btn-export-usuarios" class="btn-export" type="button">Descargar CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Documento</th>
+                <th>Nombres</th>
+                <th>Correo</th>
+                <th>Perfil</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-usuarios"></tbody>
+          </table>
+        </div>
+      </article>
+
+      <article class="admin-card" aria-label="Predicciones por usuario">
+        <div class="card-head">
+          <h3>Predicciones realizadas por usuario</h3>
+          <button id="btn-export-predicciones" class="btn-export" type="button">Descargar CSV</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Documento</th>
+                <th>Usuario</th>
+                <th>Creación</th>
+                <th>Modalidad sugerida</th>
+                <th>Fecha</th>
+              </tr>
+            </thead>
+            <tbody id="tabla-predicciones"></tbody>
+          </table>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <footer>
+    <img src="img/footer.png" alt="Footer Identipat IA" />
+  </footer>
+
+  <div id="modal-editar-usuario" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="titulo-modal-edicion">
+    <div class="modal">
+      <h3 id="titulo-modal-edicion">Editar usuario</h3>
+      <form id="form-editar-usuario">
+        <input id="edit-index" type="hidden" />
+        <div class="modal-grid">
+          <div>
+            <label for="edit-documento">Documento</label>
+            <input id="edit-documento" type="text" readonly />
+          </div>
+          <div>
+            <label for="edit-nombres">Nombres</label>
+            <input id="edit-nombres" type="text" required />
+          </div>
+          <div>
+            <label for="edit-correo">Correo</label>
+            <input id="edit-correo" type="email" required />
+          </div>
+          <div>
+            <label for="edit-perfil">Perfil</label>
+            <input id="edit-perfil" type="text" required />
+          </div>
+          <div>
+            <label for="edit-estado">Estado</label>
+            <select id="edit-estado" required>
+              <option value="Activo">Activo</option>
+              <option value="Inactivo">Inactivo</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button id="btn-cancelar-edicion" type="button">Cancelar</button>
+          <button id="btn-guardar-edicion" type="submit">Guardar cambios</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const ADMIN_DNI = "12345678";
+
+    const usuariosRegistrados = [
+      {
+        documento: "12345678",
+        nombres: "Administrador Identipat",
+        correo: "admin@identipat.pe",
+        perfil: "Administrador",
+        estado: "Activo"
+      },
+      {
+        documento: "73645129",
+        nombres: "Rosa Paredes",
+        correo: "rosa.paredes@email.com",
+        perfil: "Inventora",
+        estado: "Activo"
+      },
+      {
+        documento: "84597612",
+        nombres: "Luis Medina",
+        correo: "luis.medina@email.com",
+        perfil: "Emprendedor",
+        estado: "Activo"
+      }
+    ];
+
+    const predicciones = [
+      {
+        documento: "73645129",
+        usuario: "Rosa Paredes",
+        creacion: "Dispositivo para secado solar portátil",
+        modalidad: "Modelo de utilidad",
+        fecha: "2026-09-20"
+      },
+      {
+        documento: "84597612",
+        usuario: "Luis Medina",
+        creacion: "Marca para productos agrícolas orgánicos",
+        modalidad: "Signos distintivos",
+        fecha: "2026-09-21"
+      },
+      {
+        documento: "73645129",
+        usuario: "Rosa Paredes",
+        creacion: "Sistema de riego inteligente",
+        modalidad: "Patente de invención",
+        fecha: "2026-09-22"
+      }
+    ];
+
+    const homeLayout = document.querySelector("main.layout");
+    const adminPanel = document.getElementById("admin-panel");
+    const btnContinuar = document.getElementById("btn-continuar");
+    const btnVolver = document.getElementById("btn-volver");
+    const inputIdentificador = document.getElementById("identificador");
+    const adminPasswordGroup = document.getElementById("admin-password-group");
+    const adminPasswordInput = document.getElementById("admin-password");
+    const tipoDocumento = document.getElementById("tipo-documento");
+    const mensajeError = document.getElementById("mensaje-error");
+    const tablaUsuarios = document.getElementById("tabla-usuarios");
+    const tablaPredicciones = document.getElementById("tabla-predicciones");
+    const modalEditarUsuario = document.getElementById("modal-editar-usuario");
+    const formEditarUsuario = document.getElementById("form-editar-usuario");
+    const editIndex = document.getElementById("edit-index");
+    const editDocumento = document.getElementById("edit-documento");
+    const editNombres = document.getElementById("edit-nombres");
+    const editCorreo = document.getElementById("edit-correo");
+    const editPerfil = document.getElementById("edit-perfil");
+    const editEstado = document.getElementById("edit-estado");
+    const btnCancelarEdicion = document.getElementById("btn-cancelar-edicion");
+    const btnExportUsuarios = document.getElementById("btn-export-usuarios");
+    const btnExportPredicciones = document.getElementById("btn-export-predicciones");
+
+    function mostrarErrorRegistro(mensaje) {
+      mensajeError.textContent = mensaje;
+      mensajeError.style.display = "block";
+    }
+
+    function ocultarErrorRegistro() {
+      mensajeError.textContent = "";
+      mensajeError.style.display = "none";
+    }
+
+    function actualizarCampoContrasenaAdmin() {
+      const esDniAdmin = tipoDocumento.value === "dni" && inputIdentificador.value.trim() === ADMIN_DNI;
+
+      if (esDniAdmin) {
+        adminPasswordGroup.style.display = "block";
+        return;
+      }
+
+      adminPasswordGroup.style.display = "none";
+      adminPasswordInput.value = "";
+    }
+
+    function renderAdminData() {
+      tablaUsuarios.innerHTML = usuariosRegistrados
+        .map(
+          (usuario, index) => `
+            <tr>
+              <td>${usuario.documento}</td>
+              <td>${usuario.nombres}</td>
+              <td>${usuario.correo}</td>
+              <td>${usuario.perfil}</td>
+              <td><span class="status-pill">${usuario.estado}</span></td>
+              <td><button type="button" class="btn-edit" data-index="${index}">Editar usuario</button></td>
+            </tr>
+          `
+        )
+        .join("");
+
+      tablaPredicciones.innerHTML = predicciones
+        .map(
+          (prediccion) => `
+            <tr>
+              <td>${prediccion.documento}</td>
+              <td>${prediccion.usuario}</td>
+              <td>${prediccion.creacion}</td>
+              <td>${prediccion.modalidad}</td>
+              <td>${prediccion.fecha}</td>
+            </tr>
+          `
+        )
+        .join("");
+    }
+
+    function escaparCsv(valor) {
+      const texto = String(valor ?? "");
+      return `"${texto.replace(/"/g, '""')}"`;
+    }
+
+    function descargarCsv(nombreArchivo, encabezados, filas) {
+      const contenido = [
+        encabezados.map(escaparCsv).join(","),
+        ...filas.map((fila) => fila.map(escaparCsv).join(","))
+      ].join("\n");
+
+      const blob = new Blob([contenido], { type: "text/csv;charset=utf-8;" });
+      const url = URL.createObjectURL(blob);
+      const enlace = document.createElement("a");
+      enlace.href = url;
+      enlace.download = nombreArchivo;
+      document.body.appendChild(enlace);
+      enlace.click();
+      document.body.removeChild(enlace);
+      URL.revokeObjectURL(url);
+    }
+
+    function abrirModalEdicion(indexUsuario) {
+      const usuario = usuariosRegistrados[indexUsuario];
+      if (!usuario) {
+        return;
+      }
+
+      editIndex.value = String(indexUsuario);
+      editDocumento.value = usuario.documento;
+      editNombres.value = usuario.nombres;
+      editCorreo.value = usuario.correo;
+      editPerfil.value = usuario.perfil;
+      editEstado.value = usuario.estado;
+
+      modalEditarUsuario.style.display = "flex";
+      editNombres.focus();
+    }
+
+    function cerrarModalEdicion() {
+      modalEditarUsuario.style.display = "none";
+      formEditarUsuario.reset();
+    }
+
+    function mostrarPanelAdmin() {
+      ocultarErrorRegistro();
+      renderAdminData();
+      homeLayout.style.display = "none";
+      adminPanel.style.display = "block";
+    }
+
+    function mostrarHome() {
+      adminPanel.style.display = "none";
+      homeLayout.style.display = "grid";
+      inputIdentificador.focus();
+    }
+
+    btnContinuar.addEventListener("click", () => {
+      const valorDocumento = inputIdentificador.value.trim();
+      const esDniAdmin = tipoDocumento.value === "dni" && valorDocumento === ADMIN_DNI;
+
+      if (esDniAdmin) {
+        const contrasena = adminPasswordInput.value.trim();
+        if (!contrasena) {
+          mostrarErrorRegistro("Debes ingresar la contraseña de administrador.");
+          adminPasswordInput.focus();
+          return;
+        }
+
+        mostrarPanelAdmin();
+        return;
+      }
+
+      mostrarErrorRegistro("El DNI ingresado no se encuentra registrado.");
+    });
+
+    inputIdentificador.addEventListener("input", () => {
+      actualizarCampoContrasenaAdmin();
+      if (mensajeError.style.display === "block") {
+        ocultarErrorRegistro();
+      }
+    });
+
+    tipoDocumento.addEventListener("change", () => {
+      actualizarCampoContrasenaAdmin();
+      if (mensajeError.style.display === "block") {
+        ocultarErrorRegistro();
+      }
+    });
+
+    tablaUsuarios.addEventListener("click", (event) => {
+      const target = event.target;
+      if (!(target instanceof HTMLElement)) {
+        return;
+      }
+
+      if (!target.classList.contains("btn-edit")) {
+        return;
+      }
+
+      const indexUsuario = Number(target.dataset.index);
+      if (Number.isNaN(indexUsuario)) {
+        return;
+      }
+
+      abrirModalEdicion(indexUsuario);
+    });
+
+    formEditarUsuario.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const indexUsuario = Number(editIndex.value);
+      if (Number.isNaN(indexUsuario) || !usuariosRegistrados[indexUsuario]) {
+        return;
+      }
+
+      usuariosRegistrados[indexUsuario].nombres = editNombres.value.trim();
+      usuariosRegistrados[indexUsuario].correo = editCorreo.value.trim();
+      usuariosRegistrados[indexUsuario].perfil = editPerfil.value.trim();
+      usuariosRegistrados[indexUsuario].estado = editEstado.value;
+
+      renderAdminData();
+      cerrarModalEdicion();
+    });
+
+    btnCancelarEdicion.addEventListener("click", cerrarModalEdicion);
+
+    modalEditarUsuario.addEventListener("click", (event) => {
+      if (event.target === modalEditarUsuario) {
+        cerrarModalEdicion();
+      }
+    });
+
+    btnExportUsuarios.addEventListener("click", () => {
+      const encabezados = ["Documento", "Nombres", "Correo", "Perfil", "Estado"];
+      const filas = usuariosRegistrados.map((usuario) => [
+        usuario.documento,
+        usuario.nombres,
+        usuario.correo,
+        usuario.perfil,
+        usuario.estado
+      ]);
+
+      descargarCsv("usuarios_registrados.csv", encabezados, filas);
+    });
+
+    btnExportPredicciones.addEventListener("click", () => {
+      const encabezados = ["Documento", "Usuario", "Creacion", "Modalidad sugerida", "Fecha"];
+      const filas = predicciones.map((prediccion) => [
+        prediccion.documento,
+        prediccion.usuario,
+        prediccion.creacion,
+        prediccion.modalidad,
+        prediccion.fecha
+      ]);
+
+      descargarCsv("predicciones_usuarios.csv", encabezados, filas);
+    });
+
+    btnVolver.addEventListener("click", mostrarHome);
+  </script>
+</body>
+</html>
